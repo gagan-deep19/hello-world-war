@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('checkout') { 
             steps {
-              sh "git clone https://github.com/gagan-deep19/hello-world-war"
+              sh "git clone https://github.com/ambareeshns/hello-world-war"
             }
         }
 stage('build') { 
@@ -12,11 +12,9 @@ stage('build') {
             }
         }  
         stage('deploy') {
-            steps {
-            
-          sh "cp /home/slave_1/hello-world-war/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.60/webapps/"
-          
+            steps {            
+          sh "cp /var/lib/jenkins/workspace/firstpipelinejob/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.60/webapps/"
             }
         }
-}
-}
+        }
+        }

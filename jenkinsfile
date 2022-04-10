@@ -22,7 +22,7 @@ pipeline{
                   }
             }
             stage('deploy'){
-                  agent { label 'slave2' }
+                  agent { label 'slave1' }
                   steps{
                         sh "docker login -u gagan2905 -p virat@1819"
                         sh "docker pull gagan2905/docwarimage:1.0"
